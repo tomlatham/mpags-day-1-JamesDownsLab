@@ -8,4 +8,5 @@ Some installation instructions
 James Downs
 
 # Documentation
-This tells me what my code does
+Takes input and runs a variety of classical ciphers on to produce the output
+
