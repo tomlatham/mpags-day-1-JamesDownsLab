@@ -1,10 +1,14 @@
 #include <iostream>
 int main()
 {
-	// This is a comment
-	/* This is a 
-	 Multiline comment */
+	int a{5};
+	a = 43;
+	std::cout << a << std::endl;
 
-	std::cout << "Hello World!\n";
+	double b{5.5};
+	std::cout << b << std::endl;
+
+	int c{b};
+	std::cout << c << std::endl;	
 }
 
