@@ -9,11 +9,4 @@ James Downs
 
 # Documentation
 Takes input and runs a variety of classical ciphers on to produce the output
-
-# How to use
-...
-
-# Another change thats going to conflict
-
-# A local change
-
+# Another change that
