@@ -1,7 +1,14 @@
+#include <vector>
 #include <iostream>
 #include <string>
-int main()
+int main(int argc, char* argv[])
 {
+	const std::vector<std::string> cmdLineArgv{ argv, argv+argc};
+	for (size_t i{0}; i < cmdLineArgv.size(); i++)
+	{
+		std::cout << cmdLineArgv[i] << "\n";	
+	}	
+
 	std::string output;
 	char in_char('x');
 	char out_char;
