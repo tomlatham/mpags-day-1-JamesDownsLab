@@ -2,24 +2,62 @@
 #include <string>
 int main()
 {
-	int a{5};
-	a = 43;
-	std::cout << a << std::endl;
+	std::string output;
+	char in_char('x');
+	char out_char;
+	while (std::cin >> in_char)
+	{
+		if (std::isalnum(in_char) != 0)
+		{;
+			switch (in_char)
+			{
+				case '0':
+					output = output + "ZERO";
+					break;
+				
+				case '1':
+					output = output + "ONE";
+					break;
+				case '2':
+					output = output + "TWO";
+					break;
 
-	double b{5.5};
-	std::cout << b << std::endl;
+				case '3':
+					output = output + "THREE";
+					break;
 
-	std::cout << a*b <<std::endl;
+				case '4':
+					output = output + "FOUR";
+					break;
 
-	std::cout << a/b <<std::endl;
+				case '5':
+					output = output + "FIVE";
+					break;
 
-	std::cout << a/a << std::endl;
+				case '6':
+					output = output + "SIX";
+					break;
 
-	std::string msg{"Hello World"};
+				case '7':
+					output = output + "SEVEN";
+					break;
 
-	char letter {msg[4]};
-	std::cout << letter <<std::endl;
+				case '8':
+					output = output + "EIGHT";
+					break;
+
+				case '9':
+					output = output + "NINE";
+					break;
+
+				default:
 	
-	return 0;
+					out_char = std::toupper(in_char);
+					output = output + out_char;
+					break;
+			}
+		}
+	}
+	std::cout << output << "\n";
 }
 
