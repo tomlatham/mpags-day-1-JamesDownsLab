@@ -7,3 +7,5 @@ Some installation instructions
 # Authors
 James Downs
 
+# Documentation
+This tells me what my code does
