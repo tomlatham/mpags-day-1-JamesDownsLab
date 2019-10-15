@@ -6,6 +6,8 @@ int main(int argc, char* argv[])
 	const std::vector<std::string> cmdLineArgv{ argv, argv+argc};
 	const std::string input{cmdLineArgv[1]};
 	bool print_help{false};
+	int output_loc;
+	bool output_given{false};
 	// start loop at 1 to ignore program name
 	for (size_t i{1}; i < cmdLineArgv.size(); i++)
 	{
@@ -16,11 +18,22 @@ int main(int argc, char* argv[])
 		if (cmdLineArgv[i] == "--help"){
 			print_help = true;
 		}
+		if (cmdLineArgv[i] == "-o"){
+			output_loc = i + 1;
+			output_given = true;
+		}
 	}	
 
 	if (print_help == true){
 		std::cout << "This is the help text" << "\n";
 	}
+
+	std::string output_filename;
+	if (output_given == true){
+		output_filename = cmdLineArgv[output_loc];
+		std::cout << "Output File is " << output_filename << "\n";
+	}
+		
 
 	std::string output;
 	char in_char('x');
