@@ -5,7 +5,11 @@ int main(int argc, char* argv[])
 {
 	const std::vector<std::string> cmdLineArgv{ argv, argv+argc};
 	const std::string input{cmdLineArgv[1]};
+
 	bool print_help{false};
+	
+	bool print_version{false};
+
 	int output_loc;
 	bool output_given{false};
 	int input_file_loc;
@@ -15,8 +19,13 @@ int main(int argc, char* argv[])
 	for (size_t i{1}; i < cmdLineArgv.size(); i++)
 	{
 		std::cout << cmdLineArgv[i] << "\n";	
+
 		if (cmdLineArgv[i] == "-h" or "--help"){
 			print_help = true;
+		}
+
+		if (cmdLineArgv[i] == "--version"){
+			print_version = true;
 		}
 
 		if (cmdLineArgv[i] == "-o"){
@@ -32,6 +41,10 @@ int main(int argc, char* argv[])
 
 	if (print_help == true){
 		std::cout << "This is the help text" << "\n";
+	}
+
+	if (print_version == true){
+		std::cout << "Version: 0.0.1" << "\n";
 	}
 
 	std::string output_filename;
