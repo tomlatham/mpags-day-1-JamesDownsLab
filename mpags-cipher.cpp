@@ -8,19 +8,25 @@ int main(int argc, char* argv[])
 	bool print_help{false};
 	int output_loc;
 	bool output_given{false};
+	int input_file_loc;
+	bool input_file_given{false};
+
 	// start loop at 1 to ignore program name
 	for (size_t i{1}; i < cmdLineArgv.size(); i++)
 	{
 		std::cout << cmdLineArgv[i] << "\n";	
-		if (cmdLineArgv[i] == "-h"){
+		if (cmdLineArgv[i] == "-h" or "--help"){
 			print_help = true;
 		}
-		if (cmdLineArgv[i] == "--help"){
-			print_help = true;
-		}
+
 		if (cmdLineArgv[i] == "-o"){
 			output_loc = i + 1;
 			output_given = true;
+		}
+
+		if (cmdLineArgv[i] == "-i"){
+			input_file_loc = i + 1;
+			input_file_given = true;
 		}
 	}	
 
@@ -32,6 +38,12 @@ int main(int argc, char* argv[])
 	if (output_given == true){
 		output_filename = cmdLineArgv[output_loc];
 		std::cout << "Output File is " << output_filename << "\n";
+	}
+
+	std::string input_filename;
+	if (input_file_given == true){
+		input_filename = cmdLineArgv[input_file_loc];
+		std::cout << "Input File is " << input_filename << "\n";
 	}
 		
 
