@@ -18,9 +18,9 @@ int main(int argc, char* argv[])
 	// start loop at 1 to ignore program name
 	for (size_t i{1}; i < cmdLineArgv.size(); i++)
 	{
-		std::cout << cmdLineArgv[i] << "\n";	
+		// std::cout << cmdLineArgv[i] << "\n";	// This line prints each command line argument
 
-		if (cmdLineArgv[i] == "-h" or "--help"){
+		if (cmdLineArgv[i] == "-h" || cmdLineArgv[i] == "--help"){
 			print_help = true;
 		}
 
