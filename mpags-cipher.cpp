@@ -4,16 +4,30 @@
 int main(int argc, char* argv[])
 {
 	const std::vector<std::string> cmdLineArgv{ argv, argv+argc};
-	for (size_t i{0}; i < cmdLineArgv.size(); i++)
+	const std::string input{cmdLineArgv[1]};
+	bool print_help{false};
+	// start loop at 1 to ignore program name
+	for (size_t i{1}; i < cmdLineArgv.size(); i++)
 	{
 		std::cout << cmdLineArgv[i] << "\n";	
+		if (cmdLineArgv[i] == "-h"){
+			print_help = true;
+		}
+		if (cmdLineArgv[i] == "--help"){
+			print_help = true;
+		}
 	}	
+
+	if (print_help == true){
+		std::cout << "This is the help text" << "\n";
+	}
 
 	std::string output;
 	char in_char('x');
 	char out_char;
-	while (std::cin >> in_char)
+	for (size_t i{0}; i<input.size(); i++)
 	{
+		in_char = input[i];
 		if (std::isalnum(in_char) != 0)
 		{;
 			switch (in_char)
