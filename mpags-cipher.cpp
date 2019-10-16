@@ -14,6 +14,8 @@ int main(int argc, char* argv[])
 	bool print_version{false};
 
 	// Variables for options
+	bool output_flag{false};
+	bool input_flag{false};
 	std::string output_file;
 	std::string input_file;
 
@@ -33,11 +35,13 @@ int main(int argc, char* argv[])
 		// Test options
 		else if (cmdLineArgv[i] == "-o"){
 			i++;
+			output_flag = true;
 			output_file = cmdLineArgv[i];
 		}
 
 		else if (cmdLineArgv[i] == "-i"){
 			i++;
+			input_flag = true;
 			input_file = cmdLineArgv[i];
 		}
 
@@ -52,6 +56,14 @@ int main(int argc, char* argv[])
 
 	if (print_version == true){
 		std::cout << "Version: 0.0.1" << "\n";
+	}
+
+	if (output_flag == true){
+		std::cout << "Output file is " << output_file << "\n";
+	}
+
+	if (input_flag == true){
+		std::cout << "Input File is " << input_file << "\n";
 	}
 
 	std::string output;
