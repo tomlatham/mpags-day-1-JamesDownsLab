@@ -50,6 +50,7 @@ int main(int argc, char* argv[])
 		}
 	}	
 
+	// print statements for options and flags
 	if (print_help == true){
 		std::cout << "This is the help text" << "\n";
 	}
@@ -66,14 +67,19 @@ int main(int argc, char* argv[])
 		std::cout << "Input File is " << input_file << "\n";
 	}
 
+
+	// Actual cipher
 	std::string output;
 	char in_char('x');
 	char out_char;
 
 	if (input != ""){
+		// read each character in the input
 		for (size_t i{0}; i<input.size(); i++)
 		{
 			in_char = input[i];
+
+			// If inchar is alphanumeric either turn into a number of capitalise
 			if (std::isalnum(in_char) != 0)
 			{;
 				switch (in_char)
@@ -117,8 +123,8 @@ int main(int argc, char* argv[])
 						output = output + "NINE";
 						break;
 
-					default:
-		
+					default:	//capitalise if not a number
+
 						out_char = std::toupper(in_char);
 						output = output + out_char;
 						break;
